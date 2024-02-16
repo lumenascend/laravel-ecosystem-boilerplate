@@ -47,6 +47,13 @@ services:
                 - '-p${DB_PASSWORD}'
             retries: 3
             timeout: 5s
+    mailhog:
+        image: mailhog/mailhog:latest
+        ports:
+            - "8025:8025" # Web interface port
+            - "1025:1025" # SMTP server port
+        networks:
+            - sail    
 networks:
     sail:
         driver: bridge
