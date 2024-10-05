@@ -19,7 +19,7 @@
 		}
 	},
 	"remoteUser": "sail",
-	"postCreateCommand": "php -r \"file_exists('.env') || copy('.env.example', '.env');\" && chown -R 1000:1000 /var/www/html 2>/dev/null || true && composer install && npm run dev && ./vendor/bin/sail up -d && ./vendor/bin/sail artisan key:generate && ./vendor/bin/sail artisan migrate && npm run dev"
+	"postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
 	// "forwardPorts": [],
 	// "runServices": [],
 	// "shutdownAction": "none",
